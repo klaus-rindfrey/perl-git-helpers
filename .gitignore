@@ -1,0 +1,63 @@
+# -------------------------------------------------------------
+# Perl-specific temporary files and build artifacts
+# -------------------------------------------------------------
+*.o
+*.bs
+*.pm.tdy
+*.swp
+*.bak
+*.tmp
+*.old
+*.log
+*.out
+*.tar.gz
+*.tar.bz2
+*.zip
+
+# Build system (ExtUtils::MakeMaker or Module::Build)
+Build/
+blib/
+_MYMETA.*
+MYMETA.*
+Makefile
+Makefile.old
+pm_to_blib
+
+# Test and profiling output
+cover_db/
+nytprof.out
+*.gcov
+*.gcda
+*.gcno
+.tidyall.d/
+.deps/
+.prove
+/.last_test.pl
+
+# CPAN-related temporary files
+/.build/
+inc/
+
+# Local development artifacts
+*.db
+*.sqlite
+*.pid
+*.sock
+*.local
+.env
+.venv/
+
+# -------------------------------------------------------------
+# Emacs-specific temporary and backup files
+# -------------------------------------------------------------
+*~              # Emacs backup files
+\#*\#           # Emacs autosave files
+.\#*            # Emacs lock files
+*.elc           # Compiled Emacs Lisp files
+*.el~           # Emacs Lisp backups
+
+# -------------------------------------------------------------
+# Editor/tool-specific configuration (optional, uncomment if used)
+# -------------------------------------------------------------
+# .idea/        # JetBrains IDEs
+# .vscode/      # Visual Studio Code
