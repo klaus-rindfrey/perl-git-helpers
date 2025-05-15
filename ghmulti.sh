@@ -231,6 +231,7 @@ ghmulti.sh - Helps when using multiple Github accounts with SSH keys
 =head1 SYNOPSIS
 
    ghmulti.sh [ -c GITHUB_URL [DIR] | -u [GITHUB_URL] ]
+   ghmulti.sh --help | --version
 
 =head1 DESCRIPTION
 
