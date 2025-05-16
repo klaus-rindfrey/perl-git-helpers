@@ -4,7 +4,6 @@ use strict;
 use warnings;
 use autodie;
 
-use Carp;
 use File::Spec::Functions;
 
 use Getopt::Std;
