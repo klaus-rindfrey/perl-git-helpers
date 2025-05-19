@@ -7,26 +7,26 @@ use autodie;
 use File::Spec::Functions;
 
 use Getopt::Std;
-
+use Pod::Usage;
 
 our $VERSION = '1.00.00';
 
 
 my %Opts;
-getopts('cu', \%Opts );
+getopts('cu', \%Opts ) or pod2usage(2);
 
-die("Too many options") if keys(%Opts) > 1;
+usr_error("Too many options") if keys(%Opts) > 1;
 
 if ($Opts{u}) {
   my $url = @ARGV ? shift : get_remote_url();
-  die("Too many arguments") if @ARGV;
+  usr_error("Too many arguments") if @ARGV;
   print (get_ssh_url($url), "\n");
 } elsif ($Opts{c}) {
-  die("Missing URL") if !@ARGV;
-  die("Too many arguments") if @ARGV > 2;
+  usr_error("Missing URL") if !@ARGV;
+  usr_error("Too many arguments") if @ARGV > 2;
   clone_repo(@ARGV);
 } else {
-  die("Too many arguments") if @ARGV;
+  usr_error("Too many arguments") if @ARGV;
   config_existing_repo();
 }
 
@@ -87,7 +87,7 @@ sub get_user_data {
       my $current_user_name = $1;
       die("$current_user_name: duplicate user name") if exists($seen{$current_user_name});
       $seen{$current_user_name} = undef;
-      $line = <$hndl> // die("$config_file: unexpected EOF.\n");
+      $line = <$hndl> // die("$config_file: unexpected EOF");
       $line =~ /^\s*#\s*User:\s*(?:(\S+(?:\s+\S+)*)\s*)?<(\S+)>/ or
         die("Missing or invalid user info");
       if ($current_user_name eq $user_name) {
@@ -214,6 +214,24 @@ sub run_cmd {
   system($cmd) == 0 or croak("Failed running  $cmd");
 }
 
+sub usr_error {
+  pod2usage(-verbose => 1, -message => "$0: $_[0]\n");
+}
+
+#
+# Print help text, see docu of Getopt::Std.
+#
+sub HELP_MESSAGE {
+  pod2usage(-exitval => 0, -verbose => 2);
+}
+
+#
+# Print version info, see docu of Getopt::Std.
+#
+sub VERSION_MESSAGE {
+  print("$0: $VERSION\n");
+  exit(0);
+}
 
 
 __END__
