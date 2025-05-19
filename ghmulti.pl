@@ -9,7 +9,7 @@ use File::Spec::Functions;
 use Getopt::Std;
 use Pod::Usage;
 
-our $VERSION = '1.00.00';
+our $VERSION = '1.00.01';
 
 
 my %Opts;

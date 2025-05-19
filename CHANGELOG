@@ -1,8 +1,9 @@
 # -*- mode: text -*-
 
-x.xx.xx   yyyy/mm/dd
+1.00.01   2025/05/19
 
-	   - changed file extension of ghmulti: .sh -> .pl
+     - added correct_log.pl.
+	   - changed file extension of ghmulti: .sh -> .pl.
 
 1.00.00   2025/05/15
 
