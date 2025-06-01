@@ -7,7 +7,7 @@ use Getopt::Long qw(:config no_ignore_case auto_help auto_version);
 
 use Pod::Usage;
 
-our $VERSION = '1.00.01';
+our $VERSION = '1.00.02';
 
 my ($Old_Mail, $New_Mail, $New_User, $No_Credentials);
 

@@ -7,15 +7,17 @@ use autodie;
 use File::Spec::Functions;
 
 use Getopt::Std;
+# If set to true, exit script after processing --help or --version flags
+$Getopt::Std::STANDARD_HELP_VERSION = 1;
+
 use Pod::Usage;
 
-our $VERSION = '1.00.01';
-
+our $VERSION = '1.00.02';
 
 my %Opts;
 getopts('cu', \%Opts ) or pod2usage(2);
 
-usr_error("Too many options") if keys(%Opts) > 1;
+use_error("Too many options") if keys(%Opts) > 1;
 
 if ($Opts{u}) {
   my $url = @ARGV ? shift : get_remote_url();
@@ -221,6 +223,7 @@ sub usr_error {
 #
 # Print help text, see docu of Getopt::Std.
 #
+#sub HELP_MESSAGE {
 sub HELP_MESSAGE {
   pod2usage(-exitval => 0, -verbose => 2);
 }
@@ -230,7 +233,6 @@ sub HELP_MESSAGE {
 #
 sub VERSION_MESSAGE {
   print("$0: $VERSION\n");
-  exit(0);
 }
 
 
