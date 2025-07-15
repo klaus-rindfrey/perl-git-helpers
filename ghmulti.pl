@@ -74,7 +74,7 @@ sub config_existing_repo {
 #
 # get_user_data USER_NAME
 #
-# Reads ‘~/.ssh/config’ and returns a hasg consisting containing the user's
+# Reads ‘~/.ssh/config’ and returns a hash consisting containing the user's
 # full name ('full_name') and e-mail address ('email') from this file.
 #
 sub get_user_data {
