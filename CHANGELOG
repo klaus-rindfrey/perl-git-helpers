@@ -4,6 +4,10 @@
 
      - correct_log.pl: fixed bug and renamed option.
 
+1.00.02   2025/06/01
+
+     - Minor fix
+
 1.00.01   2025/05/19
 
      - added correct_log.pl.
