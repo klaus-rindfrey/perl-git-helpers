@@ -1,5 +1,9 @@
 # -*- mode: text -*-
 
+1.01.00   2025/07/23
+
+     - correct_log.pl: fixed bug and renamed option.
+
 1.00.01   2025/05/19
 
      - added correct_log.pl.

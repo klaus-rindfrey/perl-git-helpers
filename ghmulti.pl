@@ -12,7 +12,7 @@ $Getopt::Std::STANDARD_HELP_VERSION = 1;
 
 use Pod::Usage;
 
-our $VERSION = '1.00.02';
+our $VERSION = '1.01.00';
 
 my %Opts;
 getopts('cu', \%Opts ) or pod2usage(2);
@@ -90,7 +90,7 @@ sub get_user_data {
       die("$current_user_name: duplicate user name") if exists($seen{$current_user_name});
       $seen{$current_user_name} = undef;
       $line = <$hndl> // die("$config_file: unexpected EOF");
-      $line =~ /^\s*#\s*User:\s*(?:(\S+(?:\s+\S+)*)\s*)?<(\S+)>/ or
+      $line =~ /^\s*#\s*User:\s*(?:([^<>\s]+(?:\s+[^<>\s]+)*)\s*)?<([^<>\s]+)>/ or
         die("Missing or invalid user info");
       if ($current_user_name eq $user_name) {
         $cfg_data = {

@@ -7,14 +7,14 @@ use Getopt::Long qw(:config no_ignore_case auto_help auto_version);
 
 use Pod::Usage;
 
-our $VERSION = '1.00.02';
+our $VERSION = '1.01.00';
 
 my ($Old_Mail, $New_Mail, $New_User, $No_Credentials);
 
 GetOptions('old_email|oe=s'  => \$Old_Mail,
            'new_email|ne=s'  => \$New_Mail,
            'new_user|nu=s'   => \$New_User,
-           'not_settings|nc' => \$No_Credentials
+           'no_credentials|nc' => \$No_Credentials
           ) or pod2usage(2);
 
 $Old_Mail // die("'--old_email' missing.");
@@ -86,7 +86,7 @@ __END__
 
 =head1 SYNOPSIS
 
-  correct_log.pl --old_email OLD_EMAIL --new_email NEW_EMAIL --new_user NEW_USER [--not_settings]
+  correct_log.pl --old_email OLD_EMAIL --new_email NEW_EMAIL --new_user NEW_USER [--no_credentials]
   correct_log.pl --help | --version
 
 or, shorter:
@@ -99,7 +99,7 @@ or, shorter:
 In case that you are using an incorrect username and/or email address in a Git
 repository, you can use this script to correct the Git log.
 
-Change to your git repo directory and run the scrpt like this:
+Change to your git repo directory and run the script like this:
 
   correct_log.sh --old_email OLD_EMAIL --new_email NEW_EMAIL --new_user NEW_USER
 
@@ -109,7 +109,7 @@ The options can be written shorter like this:
 
 By default, the script also stores C<NEW_EMAIL> and C<NEW_USER> cia C<git
 config credential.helper store>. This can be switched off by specifying the
-C<--not_settings> (or C<--nc>) option.
+C<--no_credentials> (or C<--nc>) option.
 
 
 =head1 LICENSE AND COPYRIGHT
