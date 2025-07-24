@@ -259,7 +259,7 @@ you should read this gist
 L<https://gist.github.com/oanhnn/80a89405ab9023894df7> and follow the
 instructions.
 
-To use this script, you need to add information in file F</.ssh/config> by
+To use this script, you need to add information in file F<~/.ssh/config> by
 adding comments like this:
 
    Host github-foo
