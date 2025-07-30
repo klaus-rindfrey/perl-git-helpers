@@ -17,7 +17,7 @@ our $VERSION = '1.01.00';
 my %Opts;
 getopts('cu', \%Opts ) or pod2usage(2);
 
-use_error("Too many options") if keys(%Opts) > 1;
+usr_error("Too many options") if keys(%Opts) > 1;
 
 if ($Opts{u}) {
   my $url = @ARGV ? shift : get_remote_url();
