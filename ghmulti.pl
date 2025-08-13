@@ -12,7 +12,7 @@ $Getopt::Std::STANDARD_HELP_VERSION = 1;
 
 use Pod::Usage;
 
-our $VERSION = '1.01.00';
+our $VERSION = '1.01.01';
 
 my %Opts;
 getopts('cu', \%Opts ) or pod2usage(2);
@@ -244,7 +244,7 @@ __END__
 
 =head1 NAME
 
-ghmulti.sh - Helps when using multiple Github accounts with SSH keys
+ghmulti.pl - Helps when using multiple Github accounts with SSH keys
 
 
 =head1 SYNOPSIS
@@ -318,6 +318,12 @@ With this option, the script does not an configuration.
 =back
 
 Note: the options C<-c> and C<-u> are mutually exclusive!
+
+=head1 SEE ALSO
+
+L<App::ghmulti>,
+L<Git::RemoteURL::Parse>,
+L<GitHub::Config::SSH::UserData>
 
 
 =head1 ACKNOWLEDGEMENTS

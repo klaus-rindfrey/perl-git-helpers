@@ -7,7 +7,7 @@ use Getopt::Long qw(:config no_ignore_case auto_help auto_version);
 
 use Pod::Usage;
 
-our $VERSION = '1.01.00';
+our $VERSION = '1.01.01';
 
 my ($Old_Mail, $New_Mail, $New_User, $No_Credentials);
 
@@ -82,7 +82,7 @@ __END__
 
 =head1 NAME
 
-  correct_log.sh - Change username and email address in git history
+  correct_log.pl - Change username and email address in git history
 
 =head1 SYNOPSIS
 
@@ -91,7 +91,7 @@ __END__
 
 or, shorter:
 
-  correct_log.sh --oe OLD_EMAIL --ne NEW_EMAIL --nu NEW_USER --nc
+  correct_log.sh --oe OLD_EMAIL --ne NEW_EMAIL --nu NEW_USER [--nc]
 
 
 =head1 DESCRIPTION

@@ -1,5 +1,10 @@
 # -*- mode: text -*-
 
+1.01.01   2025/08/13 FINAL VERSION IN THIS REPO -> README.md
+
+     - corrected POD
+     - fixed minor bug
+
 1.01.00   2025/07/23
 
      - correct_log.pl: fixed bug and renamed option.
